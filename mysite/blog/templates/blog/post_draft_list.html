@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{%block content%}
+
+{% if draft_post %}
+{% for post in draft_post %}
+<div class="post">
+    <p class="date">Created: {{post.create_date|date:'d-m-Y'}}</p>
+    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h1>
+    <p>{{post.text|truncatechars:200}}</p>
+</div>
+{% endfor %}
+{% else %}
+<h2>Empty drafts</h2>
+{% endif %}
+{%endblock%}

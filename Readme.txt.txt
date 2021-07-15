@@ -1,0 +1,1 @@
+This is a simple blog project with django where you can post & discuss something.
